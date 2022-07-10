@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // configure Amplify
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
+import Home_Frame from './home_page';
 Amplify.configure(awsExports);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <Home_Frame />
   </React.StrictMode>
 );
 
