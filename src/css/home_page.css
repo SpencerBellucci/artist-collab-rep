@@ -1,0 +1,23 @@
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: #D9D9D9;
+    padding: 20px;
+
+    font-size: 80%;
+    color: #696969;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top_left {
+    padding-right: 15px;
+    width: 10%;
+    border-radius: 50%;
+}
+
+.profile_pic {
+    background-color: #696969;
+}
