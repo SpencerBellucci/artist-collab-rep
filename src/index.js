@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import HOME_FRAME from './home_page';
 
-// configure Amplify
-import { Amplify } from 'aws-amplify';
-import awsExports from './aws-exports';
-import Home_Frame from './home_page';
-Amplify.configure(awsExports);
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <Home_Frame />
+   <HOME_FRAME />
   </React.StrictMode>
 );
 
