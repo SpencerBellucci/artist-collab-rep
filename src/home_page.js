@@ -1,6 +1,9 @@
-import { API } from 'aws-amplify';
+import { API, Amplify, graphqlOperation } from 'aws-amplify';
 import './css/home_page.css';
-import { Amplify } from 'aws-amplify';
+
+// import graphql operations
+import { createUserRating, updateUserRating, deleteUserRating } from './graphql/mutations';
+import { listUserRatings } from './graphql/queries';
 
 // import authenticator
 import './authenticator';
@@ -9,41 +12,27 @@ import awsExports from './aws-exports';
 import Authenticator from './authenticator';
 Amplify.configure(awsExports);
 
+// ------------- database test ------------//
+const user = { name: "Spencer", genre_score: 3, key_score: 4 };
 
-//import * as queries from './graphql/queries';
+// create
+(async function() {
+    try {
+        await API.graphql(graphqlOperation(createUserRating, {input: user}));
+    } catch (e) {
+        console.log(e)
+    }
+}());
 
-
-/*
-(async () => {
-    await fetch("https://api.cyanite.ai/graphql", {
-        method: "POST",
-        body: JSON.stringify({
-          query: {
-            query: `
-              query LibraryTracksQuery {
-                libraryTracks(first: 10) {
-                  edges {
-                    node {
-                      id
-                    }
-                  }
-                }
-              }
-            `,
-            variables: {
-              first: 10,
-            },
-          },
-        }),
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiSW50ZWdyYXRpb25BY2Nlc3NUb2tlbiIsInZlcnNpb24iOiIxLjAiLCJpbnRlZ3JhdGlvbklkIjoyODUsInVzZXJJZCI6MTAyMDEsImFjY2Vzc1Rva2VuU2VjcmV0IjoiYzNkYmM2MGUxYTY2YmVjOTAxZmVmODgyZWYwN2EwN2M0ZDMxN2JlZjgyOWEzZWIxYWM1ZjYxYjhmOTc3YTRiOCIsImlhdCI6MTY1NzQ5MjI2MX0.OMeyaMwz6U2qPYHErfwfGiWEo3M23o_4G43Vx-",
-        },
-      })
-        .then((res) => res.json())
-        .then(console.log);
-})()
-*/
+// list
+(async function() {
+    try {
+        const user_rating = await API.graphql(graphqlOperation(listUserRatings));
+        console.log(user_rating);
+    } catch (e) {
+        console.log(e)
+    }
+}());
 
 
 // custom http endpoint for CYANITE API
@@ -53,15 +42,6 @@ Amplify.configure({
     }
   });
   
-
-/*
-(async () => {
-    const allTodos = await API.graphql({ query: queries.listTodos });
-    console.log(allTodos);
-})()
-*/
-
-
 (async () => {
     try {
         const allTodos = await API.graphql({ 
@@ -80,7 +60,6 @@ Amplify.configure({
 function HOME_FRAME() {
     return (
         <div>
-            
             <Authenticator />
             <API_BUTTON />
         </div>

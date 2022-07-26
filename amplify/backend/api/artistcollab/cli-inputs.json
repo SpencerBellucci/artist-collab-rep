@@ -3,10 +3,14 @@
   "serviceConfiguration": {
     "apiName": "artistcollab",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "C:\\Users\\SpencerBellucci\\Desktop\\music_capstone\\artist-collab\\amplify\\backend\\api\\artistcollab\\schema.graphql",
+    "gqlSchemaPath": "C:\\Users\\SpencerBellucci\\Desktop\\music_capstone\\artist-collab-rep\\amplify\\backend\\api\\artistcollab\\schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-07-26T19:54:28.835Z",
+      "keyDescription": "api key for user database"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
   }
 }
