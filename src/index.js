@@ -6,6 +6,7 @@ import HOME_FRAME from './home_page';
 
 import { Amplify, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
+import DATA_FRAME from './user_base_data';
 
 Amplify.configure(awsconfig);
 
@@ -13,6 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
    <HOME_FRAME />
+   <DATA_FRAME />
   </React.StrictMode>
 );
 

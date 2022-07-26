@@ -1,43 +1,46 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
+export const createUserRating = /* GraphQL */ `
+  mutation CreateUserRating(
+    $input: CreateUserRatingInput!
+    $condition: ModelUserRatingConditionInput
   ) {
-    createTodo(input: $input, condition: $condition) {
+    createUserRating(input: $input, condition: $condition) {
       id
       name
-      description
+      genre_score
+      key_score
       createdAt
       updatedAt
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
+export const updateUserRating = /* GraphQL */ `
+  mutation UpdateUserRating(
+    $input: UpdateUserRatingInput!
+    $condition: ModelUserRatingConditionInput
   ) {
-    updateTodo(input: $input, condition: $condition) {
+    updateUserRating(input: $input, condition: $condition) {
       id
       name
-      description
+      genre_score
+      key_score
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
+export const deleteUserRating = /* GraphQL */ `
+  mutation DeleteUserRating(
+    $input: DeleteUserRatingInput!
+    $condition: ModelUserRatingConditionInput
   ) {
-    deleteTodo(input: $input, condition: $condition) {
+    deleteUserRating(input: $input, condition: $condition) {
       id
       name
-      description
+      genre_score
+      key_score
       createdAt
       updatedAt
     }
