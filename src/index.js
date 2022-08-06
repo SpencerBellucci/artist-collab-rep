@@ -1,24 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import reportWebVitals from './reportWebVitals';
+
 import HOME_FRAME from './home_page';
+import DATA_FRAME from './user_base_data';
 
 import { Amplify, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import DATA_FRAME from './user_base_data';
+
+import TENSOR_AI from './tensor_ai';
+import LAYOUT from './pages/layout';
+import CHAT from './pages/chat';
+import FRIENDS from './pages/friends';
+import HOME from './pages/home';
+import RECORD from './pages/record';
 
 Amplify.configure(awsconfig);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-   <HOME_FRAME />
-   <DATA_FRAME />
-  </React.StrictMode>
-);
+export default function APP() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LAYOUT />}>
+          <Route index element={<HOME />} />
+          <Route path="record" element={<RECORD />} />
+          <Route path="chat" element={<CHAT />} />
+          <Route path="friends" element={<FRIENDS />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<APP />);

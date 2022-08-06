@@ -1,0 +1,79 @@
+/* main home page */
+
+.home_page {
+    display: flex;
+    flex-direction: row;
+    background-color: #A8A8A8;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+}
+
+.home_tab {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    height: 80%;
+    width: 100%;
+    background-color: #7E7E7E;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* saved tab */
+
+/* keeps saved_tab to right */
+.home_right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_left {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saved_tab {
+    width: 80%;
+    height: 80%;
+    background-color: #A8A8A8;
+}
+
+.unsaved_tab {
+    width: 80%;
+    height: 80%;
+}
+
+/* profile tabs */
+
+.profile {
+    padding: 20px;
+}
+
+.desc {
+    color: #F9F9F9;
+    font-size: 20px;
+    margin: 7px;
+}
+
+#play_button {
+    content: url("../images/play_image.png");
+    height: 70px;
+    
+}
+

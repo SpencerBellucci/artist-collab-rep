@@ -1,0 +1,100 @@
+/* main page */
+
+.layout_container {
+    display: column;
+    flex-direction: row;
+    background-color: #A8A8A8;
+
+    
+    height: 98vh;
+    width: 100vw;
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    background-color: #A8A8A8;
+
+    
+    height: 80%;
+    width: 90%;
+}
+
+/* ------- page for all the locations -------- */
+
+.layout_page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    justify-content: space-around;
+}
+
+/* --------- destination buttons -------- */
+
+.flex-item {
+    text-decoration: none;
+}
+
+.flex-item:link, .flex-item:visited {
+    width: 40%;
+}
+
+.flex-item:hover, .flex-item:active {
+    background-color: #7E7E7E;
+}
+
+/* home button */
+
+#home:link, #home:visited {
+    content: url('../images/home_image.png');
+}
+
+/* chat button */
+
+#chat:link, #chat:visited {
+    content: url('../images/chat_image.png');
+}
+
+/* friends button */
+
+#friends:link, #friends:visited {
+    content: url('../images/friends_image.png');
+}
+
+/* record button */
+
+#record:link, #record:visited {
+    content: url('../images/record_image.png');
+}
+
+/* ------- top bar -------*/
+
+.top_bar {
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 20%;
+}
+
+/* --------- user profile --------*/
+.user_profile {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+
+.profile_desc {
+    color: #696969;
+    font-size: 20px;
+    margin: 7px;
+}
+
+#profile_pic {
+    content: url("../images/profile_image.png");
+    height: 70px;
+    
+}
+
+
+

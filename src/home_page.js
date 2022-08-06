@@ -13,6 +13,8 @@ import Authenticator from './authenticator';
 Amplify.configure(awsExports);
 
 // ------------- database test ------------//
+
+{/*
 const user = { name: "Spencer", genre_score: 3, key_score: 4 };
 
 // create
@@ -33,7 +35,7 @@ const user = { name: "Spencer", genre_score: 3, key_score: 4 };
         console.log(e)
     }
 }());
-
+*/}
 
 // custom http endpoint for CYANITE API
 Amplify.configure({
@@ -41,7 +43,8 @@ Amplify.configure({
       graphql_endpoint: 'https://api.cyanite.ai/graphql'
     }
   });
-  
+
+// query cyanite
 (async () => {
     try {
         const allTodos = await API.graphql({ 
@@ -60,8 +63,10 @@ Amplify.configure({
 function HOME_FRAME() {
     return (
         <div>
+            {/* 
             <Authenticator />
             <API_BUTTON />
+            */}
         </div>
     )
 }
