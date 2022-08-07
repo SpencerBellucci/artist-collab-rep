@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+
 import '../styles/layout.css';
 
 const Layout = () => {
@@ -34,6 +35,7 @@ function TOP_BAR() {
     return (
         <div className="top_bar">
             <USER_PROFILE first_name="First Name" last_name="Last Name" />
+            <USER_SIGNIN/>
         </div>
     )
 }
@@ -41,9 +43,17 @@ function TOP_BAR() {
 function USER_PROFILE(props) {
     return (
         <div className="user_profile">
-            <img id="profile_pic" className="profile_desc" alt="play button"></img>
+            <img id="profile_pic" className="profile_desc" alt="profile pic"></img>
             <h1 className="profile_desc">{props.first_name}</h1>
             <h1 className="profile_desc">{props.last_name}</h1>
+        </div>
+    )
+}
+
+function USER_SIGNIN() {
+    return (
+        <div>
+            <Link id="auth" className="user_signin" to="/auth"></Link>
         </div>
     )
 }

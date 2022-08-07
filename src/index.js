@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 
-import HOME_FRAME from './home_page';
-import DATA_FRAME from './user_base_data';
-
-import { Amplify, Auth } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
+
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
 import TENSOR_AI from './tensor_ai';
 import LAYOUT from './pages/layout';
@@ -27,6 +27,7 @@ export default function APP() {
           <Route path="record" element={<RECORD />} />
           <Route path="chat" element={<CHAT />} />
           <Route path="friends" element={<FRIENDS />} />
+          <Route path="auth" element={<Authenticator />} />
         </Route>
       </Routes>
     </BrowserRouter>
