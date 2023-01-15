@@ -5,3 +5,4 @@ Capstone Project for school
 
 To Do
 - Connect Spotify API
+- Look more into using Tensor for project
